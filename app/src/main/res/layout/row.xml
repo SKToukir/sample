@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="15dp"
+    android:layout_margin="10dp"
+    android:weightSum="10"
+    android:layout_height="wrap_content" android:background="#80736b6b">
+
+
+    <LinearLayout
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/teamOneFlag"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/bd"
+            app:civ_border_width="@dimen/_2sdp"
+            app:civ_border_color="#FF000000"/>
+        <TextView
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:id="@+id/txtT1"
+        android:text="Team One"
+        android:textSize="@dimen/_18sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="VS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="right"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/teamTwoFlag"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/bd"
+            app:civ_border_width="@dimen/_2sdp"
+            app:civ_border_color="#FF000000"/>
+        <TextView
+            android:textColor="#fffefe"
+            android:textStyle="bold"
+            android:id="@+id/txtT2"
+            android:gravity="right"
+            android:text="Team One"
+            android:textSize="@dimen/_18sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Live score cricket</string>
+    <!--<string name="banner_home_footer">ca-app-pub-9590663615277504/5194571876</string>-->
+    <!--<string name="interstitial_full_screen">ca-app-pub-9590663615277504/8148038273</string>-->
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
