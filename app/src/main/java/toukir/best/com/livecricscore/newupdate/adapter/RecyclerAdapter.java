@@ -1,71 +1,57 @@
-package toukir.best.com.livecricscore;
+package toukir.best.com.livecricscore.newupdate.adapter;
 
-import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+import toukir.best.com.livecricscore.R;
+import toukir.best.com.livecricscore.utils.Matches;
 
-/**
- * Created by toukir on 5/29/16.
- */
-public class CustomAdapter extends ArrayAdapter {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
-    String teamOne, teamTwo;
-    List list = new ArrayList();
+    private List<Matches> moviesList;
 
-    public CustomAdapter(Context context, int resource){
-        super(context,resource);
-    }
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView team_one, team_two;
+        public ImageView teamOneImage, teamTwoImage;
 
-    public void add(Team object) {
-        super.add(object);
-        list.add(object);
-    }
+        public MyViewHolder(View view) {
+            super(view);
+            team_one = (TextView) view.findViewById(R.id.txtT1);
+            team_two = (TextView) view.findViewById(R.id.txtT2);
+            teamOneImage = (ImageView) view.findViewById(R.id.teamOneFlag);
+            teamTwoImage = (ImageView) view.findViewById(R.id.teamTwoFlag);
 
-    @Override
-    public int getCount() {
-        return list.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return list.get(getCount() - position - 1);
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-        View row;
-        row = convertView;
-        TeamHolder holder;
-        if (row==null){
-
-            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = inflater.inflate(R.layout.row,parent,false);
-
-            holder = new TeamHolder();
-            holder.txtTeamOne = (TextView) row.findViewById(R.id.txtT1);
-            holder.txtTeamTwo = (TextView) row.findViewById(R.id.txtT2);
-            holder.teamOneImage = (CircleImageView) row.findViewById(R.id.teamOneFlag);
-            holder.teamTwoImage = (CircleImageView) row.findViewById(R.id.teamTwoFlag);
-
-            row.setTag(holder);
-        }else {
-
-            holder = (TeamHolder) row.getTag();
         }
+    }
 
-        Team team = (Team) this.getItem(position);
-        teamOne = team.getTeamOne();
-        teamTwo = team.getTeamTwo();
-        holder.txtTeamOne.setText(teamOne);
+
+    public RecyclerAdapter(List<Matches> moviesList) {
+        this.moviesList = moviesList;
+    }
+
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.row, parent, false);
+
+        return new MyViewHolder(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        Matches matches = moviesList.get(position);
+        holder.team_one.setText(matches.getTeam_one());
+        holder.team_two.setText(matches.getTeam_two());
+
+        String teamOne = matches.getTeam_one();
+        String teamTwo = matches.getTeam_two();
+
         if (teamOne.equalsIgnoreCase("Sussex")){
             holder.teamOneImage.setImageResource(R.drawable.sussex);
         }else if (teamOne.equalsIgnoreCase("Hampshire")){
@@ -128,11 +114,12 @@ public class CustomAdapter extends ArrayAdapter {
             holder.teamOneImage.setImageResource(R.drawable.essex);
         }else if (teamOne.equalsIgnoreCase("Lancashire")){
             holder.teamOneImage.setImageResource(R.drawable.lancashire);
+        }else if (teamOne.equalsIgnoreCase("West Indies")){
+            holder.teamOneImage.setImageResource(R.drawable.westindies);
         }
         else {
             holder.teamOneImage.setImageResource(R.drawable.defaults);
         }
-        holder.txtTeamTwo.setText(teamTwo);
 
         if (teamTwo.equalsIgnoreCase("Sussex")){
             holder.teamTwoImage.setImageResource(R.drawable.sussex);
@@ -168,7 +155,7 @@ public class CustomAdapter extends ArrayAdapter {
             holder.teamTwoImage.setImageResource(R.drawable.worcestershire);
         }else if (teamTwo.equalsIgnoreCase("Bangladesh")){
             holder.teamTwoImage.setImageResource(R.drawable.bd);
-        }else if (teamTwo.equalsIgnoreCase("Afghnistan")){
+        }else if (teamTwo.equalsIgnoreCase("Afghanistan")){
             holder.teamTwoImage.setImageResource(R.drawable.afghanistan);
         }else if (teamTwo.equalsIgnoreCase("India")){
             holder.teamTwoImage.setImageResource(R.drawable.india);
@@ -202,15 +189,13 @@ public class CustomAdapter extends ArrayAdapter {
         else {
             holder.teamTwoImage.setImageResource(R.drawable.defaults);
         }
-        notifyDataSetChanged();
-        return row;
+
+
+
     }
 
-    static class TeamHolder{
-
-        TextView txtTeamOne;
-        TextView txtTeamTwo;
-        CircleImageView teamOneImage;
-        CircleImageView teamTwoImage;
+    @Override
+    public int getItemCount() {
+        return moviesList.size();
     }
 }

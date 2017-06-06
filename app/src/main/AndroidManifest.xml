@@ -23,13 +23,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ShowScoreActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
