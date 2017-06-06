@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import toukir.best.com.livecricscore.FragmentUpcomingMatch;
 import toukir.best.com.livecricscore.newupdate.FragmentTodaysMatch;
 
 /**
@@ -36,7 +37,7 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
         }
         else            // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
-            FragmentTodaysMatch tab2 = new FragmentTodaysMatch();
+            FragmentUpcomingMatch tab2 = new FragmentUpcomingMatch();
             return tab2;
 
         }

@@ -1,7 +1,7 @@
-package toukir.best.com.livecricscore.newupdate;
+package toukir.best.com.livecricscore;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,43 +24,34 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import toukir.best.com.livecricscore.R;
 import toukir.best.com.livecricscore.config.Api;
 import toukir.best.com.livecricscore.newupdate.adapter.RecyclerAdapter;
+import toukir.best.com.livecricscore.newupdate.adapter.UpcomingMatchAdapter;
 import toukir.best.com.livecricscore.utils.Matches;
+import toukir.best.com.livecricscore.utils.UpcomingMatch;
 
 /**
- * Created by toukirul on 6/6/2017.
+ * Created by toukir on 6/6/17.
  */
 
-public class FragmentTodaysMatch extends Fragment {
+public class FragmentUpcomingMatch extends Fragment {
 
-    private Matches matches;
-    private List<Matches> matchesList = new ArrayList<Matches>();
-    private RecyclerView recyclerView;
-    RecyclerAdapter adapter;
+    private RecyclerView recyclerUpcomingMatch;
+    private List<UpcomingMatch> upcomingMatchList = new ArrayList<UpcomingMatch>();
+    private UpcomingMatchAdapter adapter;
+    private UpcomingMatch matches;
 
-    public static Fragment newInstance(Context context) {
-        FragmentTodaysMatch f = new FragmentTodaysMatch();
-        return f;
-    }
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.content_upcoming_match, null);
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.content_main, null);
-
-        recyclerView = (RecyclerView) root.findViewById(R.id.listTodaysMatch);
-        adapter = new RecyclerAdapter(matchesList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-
-        loadDataTodaySMatch(Api.API_MATCHES + Api.API_KEY);
+        initUI(root);
+        loadDataFromServer(Api.MATCH_CALENDER+Api.API_KEY);
         return root;
     }
 
-
-    private void loadDataTodaySMatch(String s) {
+    private void loadDataFromServer(String s) {
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, s, null, new Response.Listener<JSONObject>() {
             @Override
@@ -68,19 +59,18 @@ public class FragmentTodaysMatch extends Fragment {
                 Log.d("FromServer", response.toString());
 
                 try {
-                    JSONArray array = response.getJSONArray("matches");
+                    JSONArray array = response.getJSONArray("data");
 
                     for (int i = 0; i < array.length(); i++) {
 
                         JSONObject object = array.getJSONObject(i);
-                        matches = new Matches();
-                        matches.setUnique_id(object.getString(Api.MATCHE_UNIQUE_ID));
+                        matches = new UpcomingMatch();
                         matches.setDate(object.getString(Api.MATCH_DATE));
-                        matches.setTeam_two(object.getString(Api.CRICKET_SCORE_TEAM_TWO));
-                        matches.setTeam_one(object.getString(Api.CRICKET_SCORE_TEAM_ONE));
+                        matches.setUnique_id(object.getString(Api.MATCHE_UNIQUE_ID));
+                        matches.setName(object.getString(Api.MATCH_NAME));
 
-                        matchesList.add(matches);
-                        recyclerView.setAdapter(adapter);
+                        upcomingMatchList.add(matches);
+                        recyclerUpcomingMatch.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                     }
 
@@ -97,6 +87,19 @@ public class FragmentTodaysMatch extends Fragment {
         });
 
         Volley.newRequestQueue(getActivity()).add(request);
+
+
+    }
+
+    private void initUI(ViewGroup root) {
+
+        recyclerUpcomingMatch = (RecyclerView) root.findViewById(R.id.recyclerUpcomingMatch);
+        adapter = new UpcomingMatchAdapter(upcomingMatchList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerUpcomingMatch.setLayoutManager(mLayoutManager);
+        recyclerUpcomingMatch.setItemAnimator(new DefaultItemAnimator());
+        recyclerUpcomingMatch.setAdapter(adapter);
+
 
     }
 }

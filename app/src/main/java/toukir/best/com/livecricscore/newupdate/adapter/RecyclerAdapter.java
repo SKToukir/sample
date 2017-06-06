@@ -106,7 +106,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             holder.teamOneImage.setImageResource(R.drawable.ireland);
         }else if (teamOne.equalsIgnoreCase("Scotland")){
             holder.teamOneImage.setImageResource(R.drawable.scotland);
-        }else if (teamOne.equalsIgnoreCase("Southafrica")){
+        }else if (teamOne.equalsIgnoreCase("South Africa")){
+            holder.teamOneImage.setImageResource(R.drawable.southafrica);
+        }else if (teamOne.equalsIgnoreCase("South Africa A")){
             holder.teamOneImage.setImageResource(R.drawable.southafrica);
         }else if (teamOne.equalsIgnoreCase("Zimbabwe")){
             holder.teamOneImage.setImageResource(R.drawable.zimbabwe);
@@ -116,6 +118,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             holder.teamOneImage.setImageResource(R.drawable.lancashire);
         }else if (teamOne.equalsIgnoreCase("West Indies")){
             holder.teamOneImage.setImageResource(R.drawable.westindies);
+        }else if (teamOne.equalsIgnoreCase("New Zealand")){
+            holder.teamOneImage.setImageResource(R.drawable.newzealand);
+        }else if (teamOne.equalsIgnoreCase("Namibia")){
+            holder.teamOneImage.setImageResource(R.drawable.namibia);
+        }else if (teamOne.equalsIgnoreCase("England Lions")){
+            holder.teamOneImage.setImageResource(R.drawable.englandlions);
         }
         else {
             holder.teamOneImage.setImageResource(R.drawable.defaults);
@@ -123,8 +131,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         if (teamTwo.equalsIgnoreCase("Sussex")){
             holder.teamTwoImage.setImageResource(R.drawable.sussex);
+        }else if (teamTwo.equalsIgnoreCase("South Africa A")){
+            holder.teamTwoImage.setImageResource(R.drawable.southafrica);
+        }else if (teamTwo.equalsIgnoreCase("England Lions")){
+            holder.teamTwoImage.setImageResource(R.drawable.englandlions);
+        }else if (teamTwo.equalsIgnoreCase("Namibia")){
+            holder.teamTwoImage.setImageResource(R.drawable.namibia);
         }else if (teamTwo.equalsIgnoreCase("Hampshire")){
             holder.teamTwoImage.setImageResource(R.drawable.hampshire);
+        }else if (teamTwo.equalsIgnoreCase("New Zealand")){
+            holder.teamTwoImage.setImageResource(R.drawable.newzealand);
         }else if (teamTwo.equalsIgnoreCase("Nottinghamshire")){
             holder.teamTwoImage.setImageResource(R.drawable.nottinghamshire);
         }else if (teamTwo.equalsIgnoreCase("Yorkshire")){
@@ -175,7 +191,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             holder.teamTwoImage.setImageResource(R.drawable.ireland);
         }else if (teamTwo.equalsIgnoreCase("Scotland")){
             holder.teamTwoImage.setImageResource(R.drawable.scotland);
-        }else if (teamTwo.equalsIgnoreCase("Southafrica")){
+        }else if (teamTwo.equalsIgnoreCase("South Africa")){
             holder.teamTwoImage.setImageResource(R.drawable.southafrica);
         }else if (teamTwo.equalsIgnoreCase("Zimbabwe")){
             holder.teamTwoImage.setImageResource(R.drawable.zimbabwe);
