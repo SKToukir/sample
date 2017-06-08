@@ -1,6 +1,7 @@
 package toukir.best.com.livecricscore.newupdate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -28,6 +30,7 @@ import toukir.best.com.livecricscore.R;
 import toukir.best.com.livecricscore.config.Api;
 import toukir.best.com.livecricscore.newupdate.adapter.RecyclerAdapter;
 import toukir.best.com.livecricscore.utils.Matches;
+import toukir.best.com.livecricscore.utils.RecyclerTouchListener;
 
 /**
  * Created by toukirul on 6/6/2017.
@@ -56,6 +59,22 @@ public class FragmentTodaysMatch extends Fragment {
         recyclerView.setAdapter(adapter);
 
         loadDataTodaySMatch(Api.API_MATCHES + Api.API_KEY);
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+
+                Toast.makeText(getActivity(),matchesList.get(position).getUnique_id(),Toast.LENGTH_LONG).show();
+                ScoreBoard.UNIQUE_ID = matchesList.get(position).getUnique_id();
+                startActivity(new Intent(getActivity(),ScoreBoard.class));
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
         return root;
     }
 

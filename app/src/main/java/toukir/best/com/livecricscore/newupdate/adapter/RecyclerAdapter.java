@@ -124,6 +124,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             holder.teamOneImage.setImageResource(R.drawable.namibia);
         }else if (teamOne.equalsIgnoreCase("England Lions")){
             holder.teamOneImage.setImageResource(R.drawable.englandlions);
+        }else if (teamOne.equalsIgnoreCase("Austria")){
+            holder.teamOneImage.setImageResource(R.drawable.austria);
+        }else if (teamOne.equalsIgnoreCase("Germany")){
+            holder.teamOneImage.setImageResource(R.drawable.germany);
+        }else if (teamOne.equalsIgnoreCase("Belgium")){
+            holder.teamOneImage.setImageResource(R.drawable.belgium);
+        }else if (teamOne.equalsIgnoreCase("Norway")){
+            holder.teamOneImage.setImageResource(R.drawable.norway);
+        }else if (teamOne.equalsIgnoreCase("France")){
+            holder.teamOneImage.setImageResource(R.drawable.france);
+        }else if (teamOne.equalsIgnoreCase("Sweden")){
+            holder.teamOneImage.setImageResource(R.drawable.sweden);
         }
         else {
             holder.teamOneImage.setImageResource(R.drawable.defaults);
@@ -133,6 +145,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             holder.teamTwoImage.setImageResource(R.drawable.sussex);
         }else if (teamTwo.equalsIgnoreCase("South Africa A")){
             holder.teamTwoImage.setImageResource(R.drawable.southafrica);
+        }else if (teamTwo.equalsIgnoreCase("Austria")){
+            holder.teamTwoImage.setImageResource(R.drawable.austria);
+        }else if (teamTwo.equalsIgnoreCase("Germany")){
+            holder.teamTwoImage.setImageResource(R.drawable.germany);
+        }else if (teamTwo.equalsIgnoreCase("Belgium")){
+            holder.teamTwoImage.setImageResource(R.drawable.belgium);
+        }else if (teamTwo.equalsIgnoreCase("Norway")){
+            holder.teamTwoImage.setImageResource(R.drawable.norway);
+        }else if (teamTwo.equalsIgnoreCase("France")){
+            holder.teamTwoImage.setImageResource(R.drawable.france);
+        }else if (teamTwo.equalsIgnoreCase("Sweden")){
+            holder.teamTwoImage.setImageResource(R.drawable.sweden);
         }else if (teamTwo.equalsIgnoreCase("England Lions")){
             holder.teamTwoImage.setImageResource(R.drawable.englandlions);
         }else if (teamTwo.equalsIgnoreCase("Namibia")){
