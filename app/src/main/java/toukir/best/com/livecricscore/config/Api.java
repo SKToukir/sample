@@ -23,7 +23,7 @@ public class Api {
 
 
     // http://cricapi.com/api/cricketScore?unique_id=1022347&apikey=5ns1uE5qMph2iOe3mGw4DGqTbd32
-    public static final String API_CRICKET_SCORE = "http://cricapi.com/api/cricketScore";
+    public static final String API_CRICKET_SCORE = "http://cricapi.com/api/cricketScore?";
     public static final String CRICKET_SCORE_TEAM_ONE = "team-1";
     public static final String CRICKET_SCORE_TEAM_TWO = "team-2";
     public static final String CRICKET_SCORE_DATE_TIME = "dateTimeGMT";
