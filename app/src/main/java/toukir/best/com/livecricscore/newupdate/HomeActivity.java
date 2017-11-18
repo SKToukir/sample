@@ -14,10 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+=======
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

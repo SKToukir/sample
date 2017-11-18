@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,8 +14,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.view.Window;
 import android.widget.TextView;
+
+import android.widget.Toast;
+
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -37,7 +41,9 @@ import toukir.best.com.livecricscore.R;
 import toukir.best.com.livecricscore.config.Api;
 import toukir.best.com.livecricscore.newupdate.adapter.RecyclerAdapter;
 import toukir.best.com.livecricscore.utils.Matches;
+
 import toukir.best.com.livecricscore.utils.NetworkChangeReceiver;
+
 import toukir.best.com.livecricscore.utils.RecyclerTouchListener;
 
 /**
@@ -88,6 +94,7 @@ public class FragmentTodaysMatch extends Fragment {
             @Override
             public void onClick(View view, int position) {
 
+
                 ScoreBoard.UNIQUE_ID = matchesList.get(position).getUnique_id();
               //  startActivity(new Intent(getActivity(),ScoreBoard.class));
 
@@ -95,6 +102,11 @@ public class FragmentTodaysMatch extends Fragment {
                 pd.setMessage("Please wait..");
 
                 getScrore(matchesList.get(position).getUnique_id());
+
+                Toast.makeText(getActivity(),matchesList.get(position).getUnique_id(),Toast.LENGTH_LONG).show();
+                ScoreBoard.UNIQUE_ID = matchesList.get(position).getUnique_id();
+                startActivity(new Intent(getActivity(),ScoreBoard.class));
+
             }
 
             @Override

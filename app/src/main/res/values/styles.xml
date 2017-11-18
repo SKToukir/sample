@@ -29,9 +29,12 @@
         <item name="colorControlNormal">#fff</item>
     </style>
 
+<<<<<<< HEAD
     <style name="Dialog_No_Border">
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowBackground">@color/transparent_color</item>
     </style>
 
+=======
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
 </resources>

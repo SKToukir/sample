@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_score_board"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/b"
+=======
+    android:id="@+id/activity_score_board"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
     tools:context="toukir.best.com.livecricscore.newupdate.ScoreBoard">
 
     <include
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar"/>
 
+<<<<<<< HEAD
     <android.support.v7.widget.CardView
         android:layout_below="@+id/tool_bar"
         android:id="@+id/media_card_view"
@@ -161,5 +168,15 @@
 
     </android.support.v7.widget.CardView>
 
+=======
+    <TextView
+        android:textSize="20sp"
+        android:id="@+id/txtScore"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/tool_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
 
 </RelativeLayout>

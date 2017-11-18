@@ -5,12 +5,17 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:orientation="horizontal"
+<<<<<<< HEAD
     android:padding="2dp" >
+=======
+    android:padding="2dp" android:background="#ad352f64">
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
 
 
     <android.support.v7.widget.CardView
         android:id="@+id/media_card_view"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="wrap_content"
         android:layout_weight="1"
         card_view:cardBackgroundColor="#ad352f64"
@@ -20,6 +25,15 @@
 
         <LinearLayout
             android:layout_margin="5dp"
+=======
+        android:layout_height="130dp"
+        android:layout_weight="1"
+        card_view:cardBackgroundColor="#ad352f64"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
             android:orientation="horizontal"
             android:weightSum="2"
             android:layout_width="match_parent"
@@ -36,8 +50,13 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/teamOneFlag"
+<<<<<<< HEAD
                     android:layout_width="@dimen/_40sdp"
                     android:layout_height="@dimen/_40sdp"
+=======
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
                     android:src="@drawable/bd"
                     app:civ_border_width="@dimen/_2sdp"
                     app:civ_border_color="#FF000000"/>
@@ -45,10 +64,17 @@
                     android:maxLines="1"
                     android:gravity="center"
                     android:textColor="#ffffff"
+<<<<<<< HEAD
                     android:textStyle="normal"
                     android:id="@+id/txtT1"
                     android:text="Team One"
                     android:textSize="@dimen/_16sdp"
+=======
+                    android:textStyle="bold"
+                    android:id="@+id/txtT1"
+                    android:text="Team One"
+                    android:textSize="@dimen/_18sdp"
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -73,19 +99,32 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/teamTwoFlag"
+<<<<<<< HEAD
                     android:layout_width="@dimen/_40sdp"
                     android:layout_height="@dimen/_40sdp"
+=======
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
                     android:src="@drawable/bd"
                     app:civ_border_width="@dimen/_2sdp"
                     app:civ_border_color="#FF000000"/>
                 <TextView
                     android:gravity="center"
                     android:textColor="#fffefe"
+<<<<<<< HEAD
                     android:textStyle="normal"
                     android:id="@+id/txtT2"
                     android:maxLines="1"
                     android:text="Team One"
                     android:textSize="@dimen/_16sdp"
+=======
+                    android:textStyle="bold"
+                    android:id="@+id/txtT2"
+                    android:maxLines="1"
+                    android:text="Team One"
+                    android:textSize="@dimen/_18sdp"
+>>>>>>> ceb6613ed793ee4cc273e6ab525759a850a94344
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
