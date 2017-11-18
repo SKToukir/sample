@@ -39,7 +39,7 @@ public class Api {
 
     // show currennt matche's player details. Just put current match uniwue id to get all player list of two team
     // http://cricapi.com/api/fantasySquad?unique_id=1022347&apikey=5ns1uE5qMph2iOe3mGw4DGqTbd32
-    public static final String API_SQUAD = "http://cricapi.com/api/fantasySquad";
+    public static final String API_SQUAD = "http://cricapi.com/api/fantasySquad?";
     public static final String PLAYER_ID = "pid";
     public static final String PLAYER_NAME = "name";
 

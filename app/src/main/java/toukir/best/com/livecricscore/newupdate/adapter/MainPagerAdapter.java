@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import toukir.best.com.livecricscore.FragmentUpcomingMatch;
+import toukir.best.com.livecricscore.FragmentMatchCalender;
 import toukir.best.com.livecricscore.newupdate.FragmentTodaysMatch;
 
 /**
@@ -34,13 +34,12 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
         {
             FragmentTodaysMatch tab1 = new FragmentTodaysMatch();
             return tab1;
-        }
-        else            // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
-        {
-            FragmentUpcomingMatch tab2 = new FragmentUpcomingMatch();
-            return tab2;
 
+        }else {
+            FragmentMatchCalender tab2 = new FragmentMatchCalender();
+            return tab2;
         }
+
     }
 
     // This method return the titles for the Tabs in the Tab Strip

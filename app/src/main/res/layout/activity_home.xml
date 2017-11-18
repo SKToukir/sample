@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/tools"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapse_toolbar"
@@ -20,6 +22,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
 
             <ImageView
                 android:id="@+id/header"
@@ -40,6 +43,7 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:titleMarginTop="15dp" />
 
+
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
@@ -48,6 +52,8 @@
                 app:tabIndicatorColor="@color/colorAccent" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
+
 
     </android.support.design.widget.AppBarLayout>
 
@@ -58,6 +64,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,6 +72,10 @@
         android:layout_margin="8dp"
         android:src="@drawable/rfrsh"
         app:borderWidth="0dp" />
+
+
+
+
 
 
 </android.support.design.widget.CoordinatorLayout>

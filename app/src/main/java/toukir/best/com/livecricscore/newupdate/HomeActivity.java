@@ -1,17 +1,31 @@
 package toukir.best.com.livecricscore.newupdate;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import toukir.best.com.livecricscore.R;
 import toukir.best.com.livecricscore.newupdate.adapter.MainPagerAdapter;
+import toukir.best.com.livecricscore.utils.NetworkChangeReceiver;
+
+import static android.R.attr.button;
 
 public class HomeActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
@@ -22,9 +36,10 @@ public class HomeActivity extends AppCompatActivity {
     TabLayout tabs;
     @Bind(R.id.pager)
     ViewPager pager;
-
+    private NetworkChangeReceiver receiver;
     MainPagerAdapter adapter;
-    CharSequence Titles[]={"Matches","Upcoming Matches"};
+    CharSequence Titles[]={"Matches","Upcoming Mathces","Match Calender"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +48,19 @@ public class HomeActivity extends AppCompatActivity {
         setTitle("");
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-        setUpTabs();
-        setUpClick();
+
+
+
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        receiver = new NetworkChangeReceiver();
+//        registerReceiver(receiver, filter);
+
+            setUpTabs();
+            setUpClick();
+
+
     }
+
 
     void setUpClick(){
         fab.setOnClickListener(new View.OnClickListener() {
